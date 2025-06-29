@@ -1,5 +1,4 @@
 import mysql.connector
-
 from mysql.connector import Error
 
 def create_database():
@@ -19,10 +18,11 @@ def create_database():
         print(f"Error: {e}")
 
     finally:
-        if 'cursor' in locals() and cursor:
+        if 'cursor' in locals():
             cursor.close()
         if 'connection' in locals() and connection.is_connected():
             connection.close()
 
 if __name__ == "__main__":
     create_database()
+
